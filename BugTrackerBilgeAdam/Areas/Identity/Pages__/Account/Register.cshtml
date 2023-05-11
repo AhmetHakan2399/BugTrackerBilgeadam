@@ -1,0 +1,38 @@
+﻿@page
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row">
+    <div class="col-md-offset-3 col-md-5">
+        <h2>Kaydol</h2>
+        <form id="registerForm"  method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label class="form-label">Adı Soyadı</label>
+                <input type="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">E-posta adresi</label>
+                <input type="email" class="form-control" asp-for="Input.Email">
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Şifre</label>
+                <input type="password" class="form-control" asp-for="Input.Password">
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Şifre Tekrar</label>
+                <input type="password" class="form-control" asp-for="Input.ConfirmPassword">
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydol</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

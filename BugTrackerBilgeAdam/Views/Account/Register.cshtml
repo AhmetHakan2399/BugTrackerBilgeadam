@@ -1,0 +1,50 @@
+﻿@model RegisterModel
+@{
+}
+
+@if (string.IsNullOrWhiteSpace(ViewBag.Hata) == false)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Hata
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h2>Kaydol</h2>
+        <form id="registerForm" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label class="form-label">Ad Soyad</label>
+                <input type="text" class="form-control" asp-for="AdiSoyAdi">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Kullanıcı Adı</label>
+                <input type="text" class="form-control" asp-for="KullaniciAdi">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Yeni Üye Rolü</label>
+                <select class="form-select" aria-label="Kullanıcı Rolü" asp-for="KullaniciRolü">
+                    <option value="Kullanıcı">Kullanıcı</option>
+                    <option value="Testçi">Testçi</option>
+                    <option value="Diğer">Diğer</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Şifre</label>
+                <input type="password" class="form-control" asp-for="Sifre">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Şifre Tekrar</label>
+                <input type="password" class="form-control" asp-for="SifreTekrar">
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydol</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

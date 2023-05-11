@@ -1,0 +1,38 @@
+﻿ 
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+        <h2>Giriş yap</h2>
+        <form id="account" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label class="form-label">E-posta</label>
+                <input type="email" class="form-control" asp-for="Input.Email">
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Şifre</label>
+                <input type="password" class="form-control" asp-for="Input.Password">
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <div class="checkbox">
+                    <label class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        Beni hatırla
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Giriş yap</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

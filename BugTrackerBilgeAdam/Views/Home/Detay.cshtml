@@ -1,0 +1,33 @@
+﻿
+@model List<DetayViewModel>
+<div class="card">
+    <div class="card-header">
+        <p>Hata Bilgileri</p>
+        @foreach (var item in Model)
+        {
+            <ul>
+                <li><b><a href="/Home/Profil/@item.KullaniciId">@item.KullaniciAdi</a></b> Kişisinin Eklediği Hata</li>
+                <li><b>Sorun Durumu:</b> @item.HataDurum</li>
+                <li><b>Kayıt Tarihi:</b> @item.KayıtTarihi</li>
+            </ul>
+        }
+    </div>
+    <div class="card-body">
+        @foreach (var item in Model)
+        {
+            <ul>
+                <li><b>Sorun Başlık:</b> @item.HataBaslik</li>
+                <li><b>Sorun Detay:</b> @item.HataDetay</li>
+
+            </ul>
+        }
+    </div>
+    <div class="card-footer text-end">
+        @foreach (var item in Model)
+        {
+            <a href="/Home/Sil/@item.HataId" class="btn btn-danger">Hata Sil</a>
+            <a href="/Home/Guncelle/@item.HataId" class="btn btn-secondary">Hata Güncelle</a>
+            @*<a href="/Home/YorumEkle/@item.HataId" class="btn btn-secondary">Hataya Yorum Yap</a>*@
+        }
+    </div>
+</div>

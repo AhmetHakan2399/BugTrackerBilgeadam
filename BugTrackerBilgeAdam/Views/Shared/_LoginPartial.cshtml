@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Kullanici> SignInManager
+@inject UserManager<Kullanici> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/" title="Manage">Merhaba @User.Identity?.Name!</a>
+    </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="/Account/Logout">Çıkış Yap</a>
+        </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark"  href="/Account/Register">Kayıt Ol</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark"  href="/Account/Login">Giriş Yap</a>
+    </li>
+}
+</ul>

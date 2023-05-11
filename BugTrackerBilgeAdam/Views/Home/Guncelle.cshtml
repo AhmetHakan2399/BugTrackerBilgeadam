@@ -1,0 +1,28 @@
+﻿@{
+}
+@model  Hata
+<form class="mt-3" action="/Home/Guncelle" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="UserId" />
+    <div class="mb-3">
+        <label class="form-label">Hata Başlığı</label>
+        <input type="text" class="form-control" asp-for="HataBaslik">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Hata Açıklaması</label>
+        <textarea rows="10" class="form-control" placeholder="Karşılaştığınız Hatayı Açıkalyın" asp-for="HataDetay"></textarea>
+    </div>
+    <div class="col-3 mb-3">
+        <select class="form-select" aria-label="Hata Durumu" asp-for="HataDurum">
+            <option selected>Hata Durumunu Seçin</option>
+            <option value="Alındı">Alındı</option>
+            <option value="Alınmadı">Alınmadı</option>
+            <option value="Reddedildi">Reddedildi</option>
+            <option value="Çözüldü">Çözüldü</option>
+        </select>
+    </div>
+    <div class="text-end">
+        <button type="submit" class="btn btn-outline-secondary">Kaydet</button>
+    </div>
+
+</form>
