@@ -4,7 +4,7 @@
 <head>
 </head>
 <body>
-    <div class="text-end">
+    <div class="">
         <b> <a href="/Home/Ekle" class="btn btn-outline-primary">Hata Ekle</a> </b>
     </div>
 
@@ -16,13 +16,17 @@
             <table class="table">
                 <tr>
                     <th>Kullanıcı Adı</th>
-                    <th>Sorun Başlık</th>
+                    <th>Hata Başlık</th>
+                    <th>Kayıt Tarihi</th>
+                    <th>Öncelik Durumu</th>
                 </tr>
                 @foreach (var Hata in Model)
                 {
                     <tr>
                         <td>@Hata.KullaniciAdi</td>
                         <td>@Hata.HataBaslik</td>
+                        <td>@Hata.KayıtTarihi</td>
+                        <td>@Hata.HataÖncelik</td>
                         <td>
                             <a href="/Home/Detay/@Hata.HataId" class="btn btn-outline-success" >Detay</a>
                         </td>

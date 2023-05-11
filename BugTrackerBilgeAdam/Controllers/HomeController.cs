@@ -28,6 +28,8 @@ namespace BugTrackerIdentityProject.Controllers
                     
                     HataBaslik = item.HataBaslik,
                     HataDetay = item.HataDetay,
+                    KayıtTarihi =item.KayitTarihi,
+                    HataÖncelik = item.HataÖncelik,
                     HataId = item.Id,
 					KullaniciAdi = item.User.UserName,
 					KullaniciId = item.UserId

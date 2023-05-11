@@ -7,15 +7,22 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Hata Açıklaması</label>
-        <textarea rows="10" class="form-control" placeholder="Karşılaştığınız Hatayı Açıkalyın" asp-for="HataDetay"></textarea>
+        <textarea rows="10" class="form-control" placeholder="Açıklama Satırı" asp-for="HataDetay"></textarea>
     </div>
-    <div class="col-3 mb-3">
+    <div class="col-3 mb-3 d-flex">
         <select class="form-select" aria-label="Hata Durumu" asp-for="HataDurum">
             <option selected>Hata Durumunu Seçin</option>
             <option value="Alındı">Alındı</option>
             <option value="Alınmadı">Alınmadı</option>
             <option value="Reddedildi">Reddedildi</option>
             <option value="Çözüldü">Çözüldü</option>
+        </select>
+        <select class="form-select mx-3" aria-label="Hata Önceliği" asp-for="HataÖncelik">
+            <option selected>Hata Durumunu Seçin</option>
+            <option value="Yüksek">Yüksek</option>
+            <option value="Orta">Orta</option>
+            <option value="Düşük">Düşük</option>
+            <option value="Önemsiz">Önemsiz</option>
         </select>
     </div>
     <div class=" col-3 mb-3">
